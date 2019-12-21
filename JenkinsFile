@@ -1,0 +1,13 @@
+node('master') {
+    checkout scm
+
+	stage('Compile stage') {
+         sh "mvn clean -U install"
+    }
+    stage('test') {
+    	sh "mvn test"
+    }
+	stage('Build') {
+		sh "docker build -t FootBall-MS ."
+    }
+ }

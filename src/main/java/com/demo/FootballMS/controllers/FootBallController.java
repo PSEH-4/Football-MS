@@ -23,7 +23,7 @@ public class FootBallController {
                                                          @PathVariable("teamName") String teamName){
         Standing standing = footBallService.getFootBallStandingsByNames(countryName, leagueName, teamName);
         if(standing == null) {
-            return new ResponseEntity("No Data Exists", HttpStatus.NOT_FOUND);
+            return new ResponseEntity("No Data", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity(standing, HttpStatus.OK);
 

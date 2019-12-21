@@ -2,6 +2,8 @@ package com.demo.FootballMS;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class FootballMsApplication {
@@ -9,5 +11,12 @@ public class FootballMsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FootballMsApplication.class, args);
 	}
+
+
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+
 
 }
